@@ -1,36 +1,79 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# PsicoFinanceiros
 
-## Getting Started
+Uma aplicação web para acompanhamento financeiro e comportamental, desenvolvida com Next.js, TypeScript e Tailwind CSS.
 
-First, run the development server:
+## Funcionalidades
 
+- **Eu Atual**: Registro do estado financeiro e comportamental atual
+  - Dívidas e despesas
+  - Receitas e ativos
+  - Estado comportamental
+
+- **Eu Ideal**: Definição dos objetivos financeiros e comportamentais
+  - Metas financeiras
+  - Estado comportamental desejado
+
+- **Compromissos**: Acompanhamento de progresso
+  - Registro de compromissos financeiros e comportamentais
+  - Acompanhamento de progresso com escala de 0 a 10
+  - Histórico de evolução
+
+## Tecnologias Utilizadas
+
+- Next.js 14
+- TypeScript
+- Tailwind CSS
+- Prisma (ORM)
+- SQLite (Banco de dados)
+
+## Instalação
+
+1. Clone o repositório:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/seu-usuario/psicofinanceiros.git
+cd psicofinanceiros
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Instale as dependências:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Configure o banco de dados:
+```bash
+npx prisma generate
+npx prisma db push
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Inicie o servidor de desenvolvimento:
+```bash
+npm run dev
+```
 
-## Learn More
+5. Acesse a aplicação em `http://localhost:3000`
 
-To learn more about Next.js, take a look at the following resources:
+## Estrutura do Projeto
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+src/
+  ├── app/                    # Páginas da aplicação
+  │   ├── eu-atual/          # Estado atual
+  │   ├── eu-ideal/          # Estado ideal
+  │   └── compromissos/      # Compromissos e progresso
+  ├── components/            # Componentes reutilizáveis
+  └── lib/                   # Utilitários e configurações
+prisma/
+  └── schema.prisma         # Schema do banco de dados
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Contribuição
 
-## Deploy on Vercel
+1. Faça um fork do projeto
+2. Crie uma branch para sua feature (`git checkout -b feature/nova-feature`)
+3. Commit suas mudanças (`git commit -m 'Adiciona nova feature'`)
+4. Push para a branch (`git push origin feature/nova-feature`)
+5. Abra um Pull Request
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Licença
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
